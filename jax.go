@@ -11,29 +11,44 @@ type Jax struct {
 	name      string
 }
 
-// say is a function that takes two arguments:
-//   - one called 'jax' of type Jax
-//   - one called 'something' of type string
-func say(jax Jax, something string) {
+func (jax Jax) say(something string) {
 	fmt.Printf("%s says: %q\n", jax.name, something)
-	fmt.Printf("(I am this happy: %d)\n\n", jax.happiness)
+}
+
+func (jax *Jax) feed(food string, value int) {
+	jax.say("*chomp chomp*")
+	jax.happiness += value
+	fmt.Printf("Our jax ate the %q\n", food)
+}
+
+func (jax Jax) howAreYou() {
+	msg := ""
+	if jax.happiness > 100 {
+		msg = fmt.Sprintf("Why I am just splendid!")
+	} else {
+		msg = fmt.Sprintf("I am fine, thank you.")
+	}
+	jax.say(msg)
 }
 
 func main() {
 	// Declare a new variable 'j1' of type Jax, with 'happiness' set to 100 and 'name' set to "Jaxieboy".
 	j1 := Jax{
-		happiness: 100,
+		happiness: 30,
 		name:      "Jaxieboy",
 	}
-	say(j1, "Hello hello!")
-	say(j1, "Jax wants some food!")
-	j1.happiness += 10
-	say(j1, "*chomp chomp*")
+	j1.say("Hello hello!")
+	j1.say("Jax wants some food!")
+	j1.feed("Bananas", 20)
 
 	j2 := Jax{
 		happiness: 90,
 		name:      "CutieJax",
 	}
-	say(j2, "Oh!")
-	say(j2, "A new friend")
+	j2.say("Oh!")
+	j2.say("A new friend")
+	j2.feed("Chicken", 40)
+
+	j1.howAreYou()
+	j2.howAreYou()
 }
