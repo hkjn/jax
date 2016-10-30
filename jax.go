@@ -3,20 +3,37 @@ package main
 
 import "fmt"
 
-// say is a function that takes a single argument called 'x', which is a string.
-func say(something string) {
-	fmt.Printf("Jax says: %s\n", something)
+// Jax is a new type, which is a struct containing two fields:
+// - an int called 'happiness'
+// - a string called 'name'
+type Jax struct {
+	happiness int
+	name      string
 }
 
-// function add has two arguments which are both integers, and it adds those two integers and returns the value of that sum.
-func add(a int, b int) int {
-	return a + b
+// say is a function that takes two arguments:
+//   - one called 'jax' of type Jax
+//   - one called 'something' of type string
+func say(jax Jax, something string) {
+	fmt.Printf("%s says: %q\n", jax.name, something)
+	fmt.Printf("(I am this happy: %d)\n\n", jax.happiness)
 }
 
 func main() {
-	say("Hello hello!")
-	say("Jax wants some food!")
-	result := add(10, 4)
-	arit := fmt.Sprintf("10 + 4 = %d\n", result)
-	say(arit)
+	// Declare a new variable 'j1' of type Jax, with 'happiness' set to 100 and 'name' set to "Jaxieboy".
+	j1 := Jax{
+		happiness: 100,
+		name:      "Jaxieboy",
+	}
+	say(j1, "Hello hello!")
+	say(j1, "Jax wants some food!")
+	j1.happiness += 10
+	say(j1, "*chomp chomp*")
+
+	j2 := Jax{
+		happiness: 90,
+		name:      "CutieJax",
+	}
+	say(j2, "Oh!")
+	say(j2, "A new friend")
 }
