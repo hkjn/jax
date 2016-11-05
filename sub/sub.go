@@ -6,23 +6,24 @@ import "fmt"
 
 // main.main() ->
 //   fmt.Println()
-//   f()
+//   Square()
 //   fmt.Printf()
-//   f()
+//   Square()
+//     Square()
 //   fmt.Println()
 //   fmt.Printf()
 func main() {
 	// We will run this function when we start the program
 	fmt.Println("oivey")
-	q := square(8)
+	q := Square(8)
 	fmt.Printf("fucking q is %d!?!?!?\n", q)
-	z := square(100)
-	k := square(z)
+	k := Square(Square(100))
 	fmt.Println("oibayayushki!!")
 	fmt.Printf("k is %d!\n", k)
 }
 
-func square(x int) int {
+// Square returns the square of its argument
+func Square(x int) int {
 	y := x * x
 	return y
 }
