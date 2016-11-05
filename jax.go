@@ -15,6 +15,7 @@ func (jax Jax) say(something string) {
 	fmt.Printf("%s says: %q\n", jax.name, something)
 }
 
+// feed gives Jax some food with a given value.
 func (jax *Jax) feed(food string, value int) {
 	jax.say("*chomp chomp*")
 	jax.happiness += value
