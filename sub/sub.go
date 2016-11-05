@@ -1,5 +1,4 @@
-//This is Aruna learning how to code in go
-
+// This is Aruna learning how to code in go
 package main
 
 //Allows me to use the fmt pakage which can format things and print them to the terminal
