@@ -1,5 +1,5 @@
 // This is Aruna learning how to code in go
-package main
+package sub
 
 // Allows me to use the fmt pakage which can format things and print them to the terminal
 import "fmt"
@@ -24,6 +24,5 @@ func main() {
 
 // Square returns the square of its argument
 func Square(x int) int {
-	y := x * x
-	return y
+	return x * x
 }
