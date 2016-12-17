@@ -2,11 +2,11 @@
 package jaxhelper
 
 import (
+	"fmt"
 	"io"
 
 	"hkjn.me/jax/sub"
 )
-import "fmt"
 
 var Chicken = Food{
 	Name:  "Chicken",
