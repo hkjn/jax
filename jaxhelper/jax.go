@@ -53,7 +53,3 @@ func (jax Jax) HowAreYou() {
 	}
 	jax.Say(msg)
 }
-
-func main() {
-	// Declare a new variable 'j1' of type Jax, with 'happiness' set to 100 and 'name' set to "Jaxieboy".
-}
